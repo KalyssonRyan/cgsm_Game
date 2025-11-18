@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://druogkk3cb2xw"
+path="res://.godot/imported/ZÉ VAQUEIRO - TENHO MEDO [SLOWED  REVERB].mp3-60e346c1d71a7e4090e5d21d163e7ce1.mp3str"
+
+[deps]
+
+source_file="res://Audios/ZÉ VAQUEIRO - TENHO MEDO [SLOWED  REVERB].mp3"
+dest_files=["res://.godot/imported/ZÉ VAQUEIRO - TENHO MEDO [SLOWED  REVERB].mp3-60e346c1d71a7e4090e5d21d163e7ce1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,119 @@
+[gd_scene load_steps=17 format=3 uid="uid://c5cqs8v3rfade"]
+
+[ext_resource type="PackedScene" uid="uid://dcqw8km8h2mdn" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Tree_4_B_Color1.fbx" id="1_1bodn"]
+[ext_resource type="PackedScene" uid="uid://bsy502pfvfwvt" path="res://Scenes/player.tscn" id="1_4cw5y"]
+[ext_resource type="Script" uid="uid://bxe0d43fox6hx" path="res://Scenes/mundo.gd" id="1_i8avv"]
+[ext_resource type="PackedScene" uid="uid://c0xi5td57n78q" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Tree_Bare_1_A_Color1.fbx" id="2_6bs12"]
+[ext_resource type="PackedScene" uid="uid://r8lfhxtbx4cx" path="res://Scenes/casa.tscn" id="6_qxsm7"]
+[ext_resource type="PackedScene" uid="uid://cbobq5ierru41" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Rock_2_G_Color1.fbx" id="10_has1v"]
+[ext_resource type="PackedScene" uid="uid://dytbj2bwaq3fc" path="res://Assets/LowPoly Environment Pack/Grass_2.fbx" id="11_1bodn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqtxj"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqidu"]
+albedo_color = Color(0.7758168, 0.60395354, 0.28234318, 1)
+metallic_specular = 0.48
+
+[sub_resource type="QuadMesh" id="QuadMesh_glouy"]
+size = Vector2(50, 50)
+orientation = 1
+
+[sub_resource type="Animation" id="Animation_i8avv"]
+resource_name = "Sol"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 2.9304078, -2.9321532), Vector3(4.712389, 3.1415927, -2.7209682)]
+}
+
+[sub_resource type="Animation" id="Animation_ibak7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 2.9304078, -2.9321532)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7j6if"]
+_data = {
+&"RESET": SubResource("Animation_ibak7"),
+&"Sol": SubResource("Animation_i8avv")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7j6if"]
+sky_top_color = Color(0.3743046, 0.3444759, 0.9155049, 1)
+sky_horizon_color = Color(0.28575364, 0.7591137, 0.4970305, 1)
+
+[sub_resource type="Sky" id="Sky_has1v"]
+sky_material = SubResource("ProceduralSkyMaterial_7j6if")
+
+[sub_resource type="Environment" id="Environment_m1vgi"]
+background_mode = 2
+background_color = Color(0.57254905, 0.36862746, 0, 0.47058824)
+background_energy_multiplier = 1.06
+sky = SubResource("Sky_has1v")
+ambient_light_source = 3
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource("1_i8avv")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_uqtxj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.238, 0, 0.32630056)
+material_override = SubResource("StandardMaterial3D_gqidu")
+mesh = SubResource("QuadMesh_glouy")
+
+[node name="Tree_4_B_Color1" parent="Floor" instance=ExtResource("1_1bodn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42834663, 0.3763889, -17.600033)
+
+[node name="Tree_Bare_1_A_Color1" parent="Floor" instance=ExtResource("2_6bs12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.300749, 0.26131794, -8.064802)
+
+[node name="Player" parent="." instance=ExtResource("1_4cw5y")]
+transform = Transform3D(0.9998934, 0.010749702, -0.009878343, -0.010462179, 0.999533, 0.028710278, 0.010182366, -0.028603865, 0.99953896, 11.972649, -0.087676406, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.91283417, -0.4083304, -9.16272e-09, 9.088105e-09, 4.2756188e-08, -1, 0.40833044, 0.9128341, 4.274026e-08, 0, 30.979908, 11.669384)
+light_energy = 0.475
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_7j6if")
+}
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Rock_2_G_Color1" parent="." instance=ExtResource("10_has1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8321085, 0.44009018, -23.053436)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m1vgi")
+
+[node name="Grass_2" parent="." instance=ExtResource("11_1bodn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3064375, 0.008439541, 16.478893)
+
+[node name="Casa" parent="." instance=ExtResource("6_qxsm7")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, -7.2118893)
+
+[node name="Node3D" type="Node3D" parent="."]

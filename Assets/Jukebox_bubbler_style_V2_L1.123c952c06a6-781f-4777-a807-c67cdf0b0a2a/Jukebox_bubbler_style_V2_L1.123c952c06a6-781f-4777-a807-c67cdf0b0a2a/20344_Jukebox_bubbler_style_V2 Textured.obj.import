@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgip0j7ihjr8"
+path="res://.godot/imported/20344_Jukebox_bubbler_style_V2 Textured.obj-26a0a94633a7938ad7fdbb7a031f05e3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/20344_Jukebox_bubbler_style_V2 Textured.obj-26a0a94633a7938ad7fdbb7a031f05e3.mesh"]
+
+source_file="res://Assets/Jukebox_bubbler_style_V2_L1.123c952c06a6-781f-4777-a807-c67cdf0b0a2a/Jukebox_bubbler_style_V2_L1.123c952c06a6-781f-4777-a807-c67cdf0b0a2a/20344_Jukebox_bubbler_style_V2 Textured.obj"
+dest_files=["res://.godot/imported/20344_Jukebox_bubbler_style_V2 Textured.obj-26a0a94633a7938ad7fdbb7a031f05e3.mesh", "res://.godot/imported/20344_Jukebox_bubbler_style_V2 Textured.obj-26a0a94633a7938ad7fdbb7a031f05e3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
