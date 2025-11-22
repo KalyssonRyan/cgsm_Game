@@ -1,17 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://c5cqs8v3rfade"]
+[gd_scene load_steps=25 format=3 uid="uid://c5cqs8v3rfade"]
 
 [ext_resource type="PackedScene" uid="uid://dcqw8km8h2mdn" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Tree_4_B_Color1.fbx" id="1_1bodn"]
 [ext_resource type="PackedScene" uid="uid://bsy502pfvfwvt" path="res://Scenes/player.tscn" id="1_4cw5y"]
 [ext_resource type="Script" uid="uid://bxe0d43fox6hx" path="res://Scenes/mundo.gd" id="1_i8avv"]
 [ext_resource type="PackedScene" uid="uid://c0xi5td57n78q" path="res://Assets/KayKit_Forest_Nature_Pack_1.0_FREE/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/fbx/Tree_Bare_1_A_Color1.fbx" id="2_6bs12"]
 [ext_resource type="PackedScene" uid="uid://cwlb336t420pj" path="res://Assets/pillar.tscn" id="4_has1v"]
-[ext_resource type="ArrayMesh" uid="uid://d137ay3xyfxm" path="res://Assets/bush.res" id="5_1bodn"]
+[ext_resource type="ArrayMesh" uid="uid://qegstynpahca" path="res://Assets/bush.res" id="5_1bodn"]
 [ext_resource type="PackedScene" uid="uid://r8lfhxtbx4cx" path="res://Scenes/casa.tscn" id="6_qxsm7"]
-[ext_resource type="PackedScene" uid="uid://b7n4qnhirh2ex" path="res://Assets/KayKit_DungeonRemastered_1.1_FREE/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_small.fbx" id="7_7j6if"]
 [ext_resource type="PackedScene" uid="uid://o3pkd1qjvfnq" path="res://Assets/Fountain/fountain.tscn" id="9_7j6if"]
 [ext_resource type="ArrayMesh" uid="uid://dvb0ya05dra7f" path="res://Assets/Fountain/fonte.res" id="9_m1vgi"]
 [ext_resource type="PackedScene" uid="uid://dytbj2bwaq3fc" path="res://Assets/LowPoly Environment Pack/Grass_2.fbx" id="11_1bodn"]
-[ext_resource type="PackedScene" uid="uid://cdmqkvj5ros0t" path="res://Assets/bench_a.tscn" id="11_m1vgi"]
+[ext_resource type="PackedScene" uid="uid://b4m6fc6giougn" path="res://Objects/banco.tscn" id="12_1bodn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uqtxj"]
 size = Vector3(51.243103, 0.585083, 49.61133)
@@ -238,9 +237,6 @@ transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 
 [node name="Node3D" type="Node3D" parent="."]
 
-[node name="floor_tile_small" parent="." instance=ExtResource("7_7j6if")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.557993, 0.33435223, 0.6159868)
-
 [node name="Fonte" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.79089, -1.4829726, 2.5249672)
 mesh = ExtResource("9_m1vgi")
@@ -255,5 +251,5 @@ shape = SubResource("ConcavePolygonShape3D_6bs12")
 [node name="fountain" parent="." instance=ExtResource("9_7j6if")]
 transform = Transform3D(1.4369065, 0, 0, 0, 1.3730956, 0, 0, 0, 1.2474608, 44.005253, -0.035049677, 0.56765044)
 
-[node name="bench_A" parent="." instance=ExtResource("11_m1vgi")]
-transform = Transform3D(-0.066065185, 0, -0.97036046, 0, 1.1492916, 0, 1.7788057, 0, -0.03603937, 49.81687, -0.06890622, 0.33440727)
+[node name="Banco" parent="." instance=ExtResource("12_1bodn")]
+transform = Transform3D(-0.065225765, 0, -0.9703479, 0, 1.149, 0, 1.7788044, 0, -0.035581023, 49.817, -0.069, 0.334)

@@ -1,13 +1,16 @@
 extends CharacterBody3D
 
+@onready var player = $Sprite3D/RogueHooded
 var current_animation
 var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var sensivity = 0.003
 @onready var camera = $FirstPerson
 var mouse = true
+var is_sitting = false
 @onready var animator = get_node("Sprite3D/RogueHooded/AnimationPlayer")
 func _ready() :
+	add_to_group("player")
 	$FirstPerson.current= true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -28,6 +31,16 @@ func _switch_view():
 			$FirstPerson.current = true
 func _process(delta):
 	_switch_view()
+	$CanvasLayer/BoxContainer/InteractText.hide()
+	
+	if $FirstPerson/RayCast3D.is_colliding():
+		var target = $FirstPerson/RayCast3D.get_collider()
+		print(target)
+		if target.has_method("interact"):
+			$CanvasLayer/BoxContainer/InteractText.show()
+			if Input.is_action_just_pressed("interact"):
+				target.interact()
+			print("Voce pode pegar esse item")
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 	
@@ -42,14 +55,20 @@ func _process(delta):
 			animator.play('Block')
 func _unhandled_input(event) :
 	
-
+	
 	if event is InputEventMouseMotion:
+		if is_sitting:
+			camera.rotate_x(-event.relative.y * sensivity)
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(70))
+			return
 		rotate_y(-event.relative.x * sensivity)
 		camera.rotate_x(-event.relative.y * sensivity)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(70))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if is_sitting:
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -78,3 +97,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)		
 		animator.play('Idle')
 	move_and_slide()
+func sit():
+	is_sitting = true
+	set_physics_process(false)
+	animator.play("Sit_Chair_Idle")
+	
