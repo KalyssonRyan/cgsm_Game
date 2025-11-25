@@ -47,14 +47,11 @@ shadow_mesh = SubResource("ArrayMesh_8ec6w")
 size = Vector3(2.1274414, 1.9497681, 1.1142578)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pqpaj"]
-height = 0.9667969
 radius = 1.3144531
 
 [node name="Banco" type="Node3D"]
 
 [node name="banco" type="StaticBody3D" parent="."]
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_pqpaj")
 
 [node name="bench_A" type="MeshInstance3D" parent="banco"]
@@ -72,7 +69,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="Area3D" type="Area3D" parent="banco"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="banco/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0284729, 1.7947855, -0.042226017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0284729, 0.07476807, -0.1801675)
 shape = SubResource("CylinderShape3D_pqpaj")
 
 [node name="Label3D" type="Label3D" parent="."]

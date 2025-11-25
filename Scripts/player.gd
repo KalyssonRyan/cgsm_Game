@@ -9,6 +9,8 @@ var sensivity = 0.003
 var mouse = true
 var is_sitting = false
 @onready var animator = get_node("Sprite3D/RogueHooded/AnimationPlayer")
+var movement_locked = false
+
 func _ready() :
 	add_to_group("player")
 	$FirstPerson.current= true
@@ -35,7 +37,7 @@ func _process(delta):
 	
 	if $FirstPerson/RayCast3D.is_colliding():
 		var target = $FirstPerson/RayCast3D.get_collider()
-		print(target)
+		
 		if target.has_method("interact"):
 			$CanvasLayer/BoxContainer/InteractText.show()
 			if Input.is_action_just_pressed("interact"):
@@ -66,12 +68,12 @@ func _unhandled_input(event) :
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(70))
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if is_sitting:
+	if movement_locked:
 		return
+	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -98,7 +100,16 @@ func _physics_process(delta: float) -> void:
 		animator.play('Idle')
 	move_and_slide()
 func sit():
+	movement_locked = true
 	is_sitting = true
-	set_physics_process(false)
+	
+	var anim = animator.get_animation("Sit_Chair_Idle")
+	anim.loop = true  # ← LOOP ATIVADO
+
 	animator.play("Sit_Chair_Idle")
 	
+func stand_up():
+	movement_locked = false
+	is_sitting = false
+	
+	animator.play("Idle")
