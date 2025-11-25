@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://opqf4e5wu67r"
+path="res://.godot/imported/Zé Vaqueiro - COLADIN (Video Oficial) [eihpkV7KSKo].mp3-ca27d91c60aa3ea3a08568106dcb541f.mp3str"
+
+[deps]
+
+source_file="res://Audios/Zé Vaqueiro - COLADIN (Video Oficial) [eihpkV7KSKo].mp3"
+dest_files=["res://.godot/imported/Zé Vaqueiro - COLADIN (Video Oficial) [eihpkV7KSKo].mp3-ca27d91c60aa3ea3a08568106dcb541f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

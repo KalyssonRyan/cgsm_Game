@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ngcmmey664dc"
+path="res://.godot/imported/Zé Vaqueiro - Meu Mel (Video Oficial) [fPWSm5wZ8_M].mp3-d3a1717eb95ffd784ede68a679b1bcb5.mp3str"
+
+[deps]
+
+source_file="res://Audios/Zé Vaqueiro - Meu Mel (Video Oficial) [fPWSm5wZ8_M].mp3"
+dest_files=["res://.godot/imported/Zé Vaqueiro - Meu Mel (Video Oficial) [fPWSm5wZ8_M].mp3-d3a1717eb95ffd784ede68a679b1bcb5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
