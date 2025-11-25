@@ -42,6 +42,8 @@ func _process(delta):
 			$CanvasLayer/BoxContainer/InteractText.show()
 			if Input.is_action_just_pressed("interact"):
 				target.interact()
+			if Input.is_action_just_pressed("play_music"):
+				target.next_track()
 			print("Voce pode pegar esse item")
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
