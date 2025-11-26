@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var animacao_mago = $Mage/AnimacaoMago
-@onready var animacao_barbaro = $Barbarian/AnimacaoBarbaro
+@onready var animacao_barbaro = $boneco/Barbarian/AnimacaoBarbaro
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
