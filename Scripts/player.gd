@@ -34,7 +34,7 @@ func _switch_view():
 func _process(delta):
 	_switch_view()
 	$CanvasLayer/BoxContainer/InteractText.hide()
-	
+	$CanvasLayer/BoxContainer2/Sentar.hide()
 	if $FirstPerson/RayCast3D.is_colliding():
 		var target = $FirstPerson/RayCast3D.get_collider()
 		
@@ -44,7 +44,20 @@ func _process(delta):
 				target.interact()
 			if Input.is_action_just_pressed("play_music"):
 				target.next_track()
-			print("Voce pode pegar esse item")
+		
+		
+		if target.has_method("sentar"):
+			$CanvasLayer/BoxContainer2/Sentar.show()
+			if Input.is_action_just_pressed("interact"):
+				target.sentar()
+	if $CollisionShape3D/RayCast3D2.is_colliding():
+		
+		var target2 = $CollisionShape3D/RayCast3D2.get_collider()
+		if target2.has_method("sentar"):
+			$CanvasLayer/BoxContainer2/Sentar.show()
+			if Input.is_action_just_pressed("interact"):
+				target2.sentar()
+	
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 	
@@ -107,7 +120,6 @@ func sit():
 	
 	var anim = animator.get_animation("Sit_Chair_Idle")
 	anim.loop = true  # ← LOOP ATIVADO
-
 	animator.play("Sit_Chair_Idle")
 	
 func stand_up():

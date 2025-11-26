@@ -29,9 +29,12 @@ script = ExtResource("1_y0qk3")
 transform = Transform3D(1, 0, 0, 0, 0.96314377, 0.26898706, 0, -0.26898706, 0.96314377, 0, 2.9834247, 2.3911319)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0476623, 0.40942824)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0476623, 0.31923354)
 shape = SubResource("CapsuleShape3D_v0iea")
 debug_color = Color(0.9529412, 0, 0.5568628, 1)
+
+[node name="RayCast3D2" type="RayCast3D" parent="CollisionShape3D"]
+transform = Transform3D(0.40457678, -0.09651747, -1.8120333, -0.4044684, 1.4315519, -0.44333494, -0.8153934, -0.6775862, -0.6640531, 0.37260336, 1.2558535, 0.07280862)
 
 [node name="FirstPerson" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9998767, -0.015707316, 0, 0.015707316, 0.9998767, -0.0050258636, 1.544797, -0.38936007)
@@ -158,10 +161,31 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="InteractText" type="Label" parent="CanvasLayer/BoxContainer"]
+visible = false
 layout_mode = 2
 text = "Pressione \"E\" para pausar/despausar a música
 Pressione \"F\" para mudar de música
 "
+label_settings = SubResource("LabelSettings_6t5aa")
+
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -20.0
+offset_right = 98.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sentar" type="Label" parent="CanvasLayer/BoxContainer2"]
+layout_mode = 2
+text = "Pressione \"E\" para sentar/levantar"
 label_settings = SubResource("LabelSettings_6t5aa")
 
 [editable path="Sprite3D/RogueHooded"]
