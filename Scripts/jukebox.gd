@@ -8,6 +8,7 @@ var current_track := 0
 var tracks := [
 	preload("res://Audios/Zé Vaqueiro - COLADIN (Video Oficial) [eihpkV7KSKo].mp3"),
 	preload("res://Audios/Zé Vaqueiro - Meu Mel (Video Oficial) [fPWSm5wZ8_M].mp3"),
+	preload("res://Audios/Tihuana - Eu vi Gnomos.mp3"),
 	preload("res://Audios/ZÉ VAQUEIRO - TENHO MEDO [SLOWED  REVERB].mp3")
 ]
 
