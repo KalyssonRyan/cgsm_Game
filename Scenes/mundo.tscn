@@ -302,7 +302,7 @@ shape = SubResource("BoxShape3D_uqtxj")
 debug_color = Color(0.7320418, 0.25036633, 1, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(7.066014, 0, 0, 0, 1.8671122, 0, 0, 0, 3.7995467, 0.85036194, -0.009731054, 0.075766236)
+transform = Transform3D(7.066014, 0, 0, 0, 1.8671122, 0, 0, 0, 3.799547, 0.85729516, -0.009731054, 0.040067002)
 material_override = SubResource("StandardMaterial3D_gqidu")
 mesh = SubResource("QuadMesh_glouy")
 
@@ -1451,4 +1451,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.745869, -0.030060649, 3.46
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.270845, 0.07466528, -3.653789)
 
 [node name="Bush_4_B_Color1" parent="." instance=ExtResource("29_nmh1f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.015177, 0.23751369, 8.973795)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.015177, -0.020266324, 8.973795)
