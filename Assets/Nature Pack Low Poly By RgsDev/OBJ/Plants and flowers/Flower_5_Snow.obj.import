@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dmkdps6risscy"
+path="res://.godot/imported/Flower_5_Snow.obj-d70d24b417ef4f8a409e1f021ab0811d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flower_5_Snow.obj-d70d24b417ef4f8a409e1f021ab0811d.mesh"]
+
+source_file="res://Assets/Nature Pack Low Poly By RgsDev/OBJ/Plants and flowers/Flower_5_Snow.obj"
+dest_files=["res://.godot/imported/Flower_5_Snow.obj-d70d24b417ef4f8a409e1f021ab0811d.mesh", "res://.godot/imported/Flower_5_Snow.obj-d70d24b417ef4f8a409e1f021ab0811d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

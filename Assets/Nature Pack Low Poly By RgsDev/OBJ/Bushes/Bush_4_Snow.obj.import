@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2slwj058g5xs"
+path="res://.godot/imported/Bush_4_Snow.obj-20e71c7996c9c3e4bb56989c49a4ac2f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bush_4_Snow.obj-20e71c7996c9c3e4bb56989c49a4ac2f.mesh"]
+
+source_file="res://Assets/Nature Pack Low Poly By RgsDev/OBJ/Bushes/Bush_4_Snow.obj"
+dest_files=["res://.godot/imported/Bush_4_Snow.obj-20e71c7996c9c3e4bb56989c49a4ac2f.mesh", "res://.godot/imported/Bush_4_Snow.obj-20e71c7996c9c3e4bb56989c49a4ac2f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

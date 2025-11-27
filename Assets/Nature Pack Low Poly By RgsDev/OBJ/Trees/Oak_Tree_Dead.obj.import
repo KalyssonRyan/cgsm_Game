@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnwgbtc2oe3nn"
+path="res://.godot/imported/Oak_Tree_Dead.obj-801458c92d61f31ce0072de39889dc7d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Oak_Tree_Dead.obj-801458c92d61f31ce0072de39889dc7d.mesh"]
+
+source_file="res://Assets/Nature Pack Low Poly By RgsDev/OBJ/Trees/Oak_Tree_Dead.obj"
+dest_files=["res://.godot/imported/Oak_Tree_Dead.obj-801458c92d61f31ce0072de39889dc7d.mesh", "res://.godot/imported/Oak_Tree_Dead.obj-801458c92d61f31ce0072de39889dc7d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
