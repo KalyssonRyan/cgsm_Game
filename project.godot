@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PrimeiroJogo3d"
-run/main_scene="uid://c5cqs8v3rfade"
+run/main_scene="uid://dqbhmupyq34qr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

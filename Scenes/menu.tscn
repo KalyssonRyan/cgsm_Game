@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh84ghhdmpwug"]
+
+[ext_resource type="Texture2D" uid="uid://c6j0ppk04qiva" path="res://Assets/Iniciar.png" id="2_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://b8a4dchkqdj5f" path="res://Assets/Iniciar_hover.png" id="3_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://covnxobcccnkh" path="res://Assets/sair.png" id="4_q3rjx"]
+[ext_resource type="Texture2D" uid="uid://dtecwf816vhm" path="res://Assets/sair_hover.png" id="5_6swd7"]
+[ext_resource type="Texture2D" uid="uid://d3upehl0sr8ey" path="res://Assets/Menu_background.png" id="6_7qvly"]
+
+[sub_resource type="GDScript" id="GDScript_wwsa2"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'del\"res://Scenes/mundo.tscn\"ta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_iniciar_pressed() -> void:
+	pass # Replace with function body.
+	get_tree().change_scene_to_file(\"res://Scenes/mundo.tscn\")
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+"
+
+[node name="Menu" type="Node2D"]
+script = SubResource("GDScript_wwsa2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 368.0
+offset_top = 119.0
+offset_right = 408.0
+offset_bottom = 159.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Iniciar" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 0.5
+offset_left = 445.0
+offset_top = 206.0
+offset_right = 679.0
+offset_bottom = 244.0
+texture_normal = ExtResource("2_jsrd8")
+texture_hover = ExtResource("3_wbdvm")
+
+[node name="Sair" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 339.0
+offset_right = 714.0
+offset_bottom = 459.0
+texture_normal = ExtResource("4_q3rjx")
+texture_hover = ExtResource("5_6swd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1063, 566)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_7qvly")
+
+[connection signal="pressed" from="Control/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Control/Sair" to="." method="_on_sair_pressed"]
